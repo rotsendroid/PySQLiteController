@@ -1,0 +1,6 @@
+# Files
+db1
+
+# Directories
+__pycache__
+.idea
