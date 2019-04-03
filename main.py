@@ -1,13 +1,13 @@
-from Definition import Definition
-from Manipulation import Manipulation
+from db_controller.Definition import Definition
+from db_controller.Manipulation import Manipulation
 
 if __name__ == '__main__':
     # Usage examples
-    table = 'address'
+    table = 'Location'
     d2 = Definition('db1')
     s = d2.create_table(table)
     if s:
-        s += d2.add_column('addr', 'string', is_next=False)
+        s += d2.add_column('address', 'string', is_next=False)
         d2.cursor.execute(s)
     else:
         print('Table {} exists'.format(table))
@@ -23,11 +23,11 @@ if __name__ == '__main__':
     d2.commit_close()
 
     m2 = Manipulation('db1')
-    template = m2.insert_record(table, 'addr')
+    template = m2.insert_record(table, 'address')
     print(template)
-    v = m2.insert_values('Papepisthmiou')
+    v = m2.insert_values('Hamilton St.')
     print(v)
-    m2.cursor.execute(template, m2.insert_values("Akadhmias"))
+    m2.cursor.execute(template, m2.insert_values("Academy St."))
 
     q = m2.cursor.execute('SELECT * FROM address;').fetchall()
     print(q)

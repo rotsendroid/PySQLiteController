@@ -1,4 +1,4 @@
-from SQLiteBase import *
+from db_controller.SQLiteBase import *
 
 class Definition(SQLiteBase):
     """

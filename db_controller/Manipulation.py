@@ -1,5 +1,5 @@
-from SQLiteBase import *
-from ValueNumbersException import ValueNumbersException
+from db_controller.SQLiteBase import *
+from db_controller.ValueNumbersException import ValueNumbersException
 
 class Manipulation(SQLiteBase):
     """
